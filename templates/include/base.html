@@ -1,0 +1,208 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from pixner.net/gamestorm3/main/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 09 Jul 2024 23:04:28 GMT -->
+<head>
+    <!-- required meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- #keywords -->
+    <meta name="keywords" content="games-mod">
+    <!-- #description -->
+    <meta name="description" content="Games-mod">
+    <!-- #title -->
+    <title>games-mod</title>
+    <!-- #favicon -->
+    <link rel="shortcut icon" href="{% static 'images/fav.png' %}" type="image/x-icon">
+
+    <!-- ==== css dependencies start ==== -->
+    <link rel="stylesheet" href="{% static 'css/style.min.css' %}">
+</head>
+
+<body>
+<!-- Login Registration start -->
+<div class="log-reg cmn-popup">
+    <div class="container">
+        <div class="row">
+            <div style="margin-left: 17rem;margin-top: 2rem;" class="col-lg-6">
+                <div class="modal-dialog pt-8 pt-sm-0 modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header border-0 p-0 justify-content-between position-absolute">
+                            <button type="button" class="btn-close p-0" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="tab-content">
+                            <ul class="nav flex-nowrap log-reg-btn justify-content-center">
+                                {#                                <li class="bottom-area" role="presentation">#}
+                                {#                                    <button class="nav-link py-4 active" id="loginArea-tab" data-bs-toggle="tab"#}
+                                {#                                            data-bs-target="#loginArea" type="button" role="tab"#}
+                                {#                                            aria-controls="loginArea" aria-selected="true">#}
+                                {#                                        Login#}
+                                {#                                    </button>#}
+                                {#                                </li>#}
+                                <li class="bottom-area" role="presentation">
+                                    <button class="nav-link py-4 active" id="regArea-tab" data-bs-toggle="tab"
+                                            data-bs-target="#regArea" type="button" role="tab"
+                                            aria-controls="regArea" aria-selected="false">
+                                        Sign Up
+                                    </button>
+                                </li>
+                            </ul>
+                            {#                            <div class="tab-pane fade show active" id="loginArea" role="tabpanel"#}
+                            {#                                 aria-labelledby="loginArea-tab">#}
+                            {#                                <div class="login-content">#}
+                            {#                                    <div class="modal-body p-0">#}
+                            {#                                        <form action="#" class="p-4 p-sm-8">#}
+                            {#                                            <p>Sign up for faster checkout, special offers, and customer#}
+                            {#                                                support!</p>#}
+                            {#                                            <div class="form-inside mt-6 p-3 p-sm-6">#}
+                            {#                                                <div class="row">#}
+                            {#                                                    <div class="col-sm-12">#}
+                            {#                                                        <div class="single-input text-start">#}
+                            {#                                                            <label for="loginemail">Email*</label>#}
+                            {#                                                            <input type="text" id="loginemail"#}
+                            {#                                                                   placeholder="Enter your email"#}
+                            {#                                                                   autocomplete="off">#}
+                            {#                                                        </div>#}
+                            {#                                                    </div>#}
+                            {#                                                    <div class="col-sm-12">#}
+                            {#                                                        <div class="single-input text-start">#}
+                            {#                                                            <label for="loginpassword">Password*</label>#}
+                            {#                                                            <div class="pass-box d-center position-relative">#}
+                            {#                                                                <input type="text" id="loginpassword"#}
+                            {#                                                                       placeholder="Enter your Password"#}
+                            {#                                                                       autocomplete="off">#}
+                            {#                                                                <i#}
+                            {#                                                                        class="material-symbols-outlined show-hide-pass position-absolute end-0 pe-4">#}
+                            {#                                                                    visibility </i>#}
+                            {#                                                            </div>#}
+                            {#                                                        </div>#}
+                            {#                                                    </div>#}
+                            {#                                                    <div class="col-sm-12">#}
+                            {#                                                        <div class="checkbox-item d-grid gap-4 mt-4 mt-sm-6">#}
+                            {#                                                            <label#}
+                            {#                                                                    class="single-radio checkbox position-relative d-flex align-items-center px-5 ps-8">#}
+                            {#                                                                        <span class="text-start d-flex gap-1">#}
+                            {#                                                                            I agree to the <span>Terms of#}
+                            {#                                                                                Services</span>#}
+                            {#                                                                        </span>#}
+                            {#                                                                <input type="checkbox" name="agree">#}
+                            {#                                                                <span class="checkmark start-0"></span>#}
+                            {#                                                            </label>#}
+                            {#                                                        </div>#}
+                            {#                                                        <div class="btn-area mt-4 mt-sm-8">#}
+                            {#                                                            <button class="box-style btn-box">#}
+                            {#                                                                Login#}
+                            {#                                                            </button>#}
+                            {#                                                        </div>#}
+                            {#                                                    </div>#}
+                            {#                                                </div>#}
+                            {#                                            </div>#}
+                            {#                                        </form>#}
+                            {#                                    </div>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            <div class="tab-pane fade show active" id="regArea" role="tabpanel"
+                                 aria-labelledby="regArea-tab">
+                                <div class="reg-content regMod">
+                                    <div class="modal-body p-0">
+                                        <form method="post" class="p-4 p-sm-8">
+                                            {% csrf_token %}
+                                            <p>Sign up for faster checkout, special offers, and customer
+                                                support!</p>
+                                            <div class="form-inside mt-6 p-3 p-sm-6">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <div class="single-input text-start">
+                                                            <label for="lname">Username*</label>
+                                                            <input type="text" name="username" id="username"
+                                                                   placeholder="Enter Your Username"
+                                                                   autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single-input text-start">
+                                                            <label for="email">Email*</label>
+                                                            <input type="text" name="email" id="email"
+                                                                   placeholder="Enter your email"
+                                                                   autocomplete="off">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single-input text-start">
+                                                            <label for="password">Password*</label>
+                                                            <div class="pass-box d-center position-relative">
+                                                                <input type="text" name="password" id="password"
+                                                                       placeholder="Enter your Password"
+                                                                       autocomplete="off">
+                                                                <i
+                                                                        class="material-symbols-outlined show-hide-pass position-absolute end-0 pe-4">
+                                                                    visibility </i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="single-input text-start">
+                                                            <label for="cpassword">Confirm Password*</label>
+                                                            <div class="pass-box d-center position-relative">
+                                                                <input type="text" name="parol" id="parol"
+                                                                       placeholder="Enter your Password"
+                                                                       autocomplete="off">
+                                                                <i
+                                                                        class="material-symbols-outlined show-hide-pass position-absolute end-0 pe-4">
+                                                                    visibility </i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <div class="checkbox-item d-grid gap-4 mt-4 mt-sm-6">
+                                                            <label
+                                                                    class="single-radio checkbox position-relative d-flex align-items-center px-5 ps-8">
+                                                                        <span class="text-start d-flex gap-1">
+                                                                            I agree to the <span>Terms of
+                                                                                Services</span>
+                                                                        </span>
+                                                                <input type="checkbox" name="agree">
+                                                                <span class="checkmark start-0"></span>
+                                                            </label>
+                                                        </div>
+                                                        <div class="btn-area mt-4 mt-sm-8">
+                                                            <button class="box-style btn-box">
+                                                                Sign Up
+                                                            </button>
+                                                        </div>
+                                                        {% if error %}
+                                                            <p style="color: red;">{{ error }}</p>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- Login Registration end -->
+
+
+<!-- ==== js dependencies start ==== -->
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{% static 'js/plugins/plugins.js' %}"></script>
+<script src="{% static 'js/plugins/plugin-custom.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
